@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Chi on Hermanowicz.co</title>
+    <link>http://localhost:1313/tags/chi/</link>
+    <description>Recent content in Chi on Hermanowicz.co</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 May 2024 11:30:03 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/chi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Chi framewark starter</title>
+      <link>http://localhost:1313/blog/go-chi-starter/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/go-chi-starter/</guid>
+      <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
+    </item>
+  </channel>
+</rss>

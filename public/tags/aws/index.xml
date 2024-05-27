@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AWS on Hermanowicz.co</title>
+    <link>http://localhost:1313/tags/aws/</link>
+    <description>Recent content in AWS on Hermanowicz.co</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 May 2024 11:38:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform state in S3 &amp; DynamoDB</title>
+      <link>http://localhost:1313/blog/terraform-state/</link>
+      <pubDate>Fri, 17 May 2024 11:38:05 +0000</pubDate>
+      <guid>http://localhost:1313/blog/terraform-state/</guid>
+      <description>How to hold terraform state in AWS, soo other users in team can use it also. Example tested in production.</description>
+    </item>
+    <item>
+      <title>Setting up AWS VPC using Cloud Formation</title>
+      <link>http://localhost:1313/blog/setting-up-vpc-using-cloudformation/</link>
+      <pubDate>Wed, 15 May 2024 11:34:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/setting-up-vpc-using-cloudformation/</guid>
+      <description>How to set-up AWS VPC using cloud formation, AWS native IaC tool</description>
+    </item>
+  </channel>
+</rss>

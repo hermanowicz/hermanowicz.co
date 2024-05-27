@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>My New Hugo Site</title>
+<title>Hermanowicz.co</title>
 
 <meta name="description" content="">
 <meta name="author" content="">
@@ -75,7 +75,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Hermanowicz.co (Alt + H)">Hermanowicz.co</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -104,10 +104,149 @@
     </nav>
 </header>
 <main class="main"> 
+
+<article class="first-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Simple file server in golang
+    </h2>
+  </header>
+  <footer class="entry-footer"><span title='2024-05-17 11:38:05 +0000 +0000'>May 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;108 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Simple file server in golang" href="http://localhost:1313/blog/simple-golang-fileserver/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Terraform state in S3 &amp; DynamoDB
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Terraform can make life simple &amp; enjoyable or really miserable. State aka. what is currently deployed is one of those things. Sharing state using zip’s, simple bucket uploads can will create huge problem with different state at each of user’s workstation. Lack of “single source of truth” can bring production to grinding halt.
+To avoid those problems we can store state in Terraform Cloud or Online in S3, GCS or Azure Blob This post will show how to do it using AWS services....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-17 11:38:05 +0000 +0000'>May 17, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;233 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Terraform state in S3 &amp; DynamoDB" href="http://localhost:1313/blog/terraform-state/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ADR - Note
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Origin: pmerson/ADR-template
+Usage guidelines: Each ADR is a plain text, 1-2 page document ADRs should be numbered ADRs should be stored within each software project repo Create a separate repo for crosscutting ADRs Track ADRs in the backlog Review ADRs Create ADRs for significant design decisions This template is a suggestion that you may want to adopt or adapt. In any case, establishing and sharing a template for ADRs in your team or organization is a good idea....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:37:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;204 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to ADR - Note" href="http://localhost:1313/blog/architecture-adr/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ruby basics
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you’re a sysadmin looking to automate your server management tasks, Ruby might be the perfect language for you. With its simple syntax and powerful libraries, Ruby can help you write scripts and tools that make managing servers and AWS much easier.
+Introduction Ruby is an interpreted, high-level, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro “Matz” Matsumoto in Japan. Ruby is dynamically typed and uses garbage collection....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:34:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;1566 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Ruby basics" href="http://localhost:1313/blog/ruby-for-sysadmins/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Setting up AWS VPC using Cloud Formation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>VPC Setup: VPC contains two main subnets (Private &amp; Public) in VPC with /16 CIDR block (172.16.0.0). Public subnet 172.16.250.0/24 &amp; Private 172.16.1.0/20, private subnets connect to internet using NAT Gateway. By default Assigment off public IP in Public subnet is dissabled in this example this will require Attachment of EIP, but provieds full control.
+Resources: MainVPC: Type: AWS::EC2::VPC Properties: CidrBlock: 172.32.0.0/16 EnableDnsSupport: true EnableDnsHostnames: true Tags: - Key: Name Value: Custome_VPC_172....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:34:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;240 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Setting up AWS VPC using Cloud Formation" href="http://localhost:1313/blog/setting-up-vpc-using-cloudformation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ansible notes
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Links: ansible docs
+getting started
+modules cheat sheet
+ansibe cheat sheet
+Ansible playbook format: - hosts: all user: ubuntu sudo: yes vars: env: sandbox ver: &#34;0.1.0&#34; tasks: - ... handlers: - ... Adding user: - name: add user jeff user: state: present name: jeff system: no shell: /bin/sh groups: sudo,docker append: yes comment: &#34;jeff is a system admin from 1.01.2024&#34; password: temp_pass Upgrading Ubuntu system using apt: - name: upgrade system apt: upgrade: yes Installing packages using apt: - name: install required packages on new system apt: pkg: - docker....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;234 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Ansible notes" href="http://localhost:1313/blog/ansible-notes/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Deploy static-site tocdn using GitHub Action
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Secrets List: AWS_ACCESS_KEY_ID (default) AWS_SECRET_ACCESS_KEY (default) BUCKET_ID (Bucket name 😂) DISTRIBUTION_ID (Generated by AWS Value) Main Action Body name: Deploy hermanowicz.co on: push: branches: - main jobs: deploy: runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v3 - name: Configure AWS Credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: eu-west-1 - name: Install modules run: npm ci - name: Build application run: npm run build - name: Deploy to S3 run: aws s3 sync --delete ....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;147 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Deploy static-site tocdn using GitHub Action" href="http://localhost:1313/blog/deploy-website/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Golang Chi framewark starter
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Commands: # init go module in current dir go mod init github.com/Hermanowicz/new-app # install chi freamowk go get -u github.com/go-chi/chi/v5 # run tidy go mod tidy Makefile: build: go build -o app dist/main.go clanup: rm dist/app main.go: package main import ( &#34;net/http&#34; &#34;github.com/go-chi/chi/v5&#34; &#34;github.com/go-chi/chi/v5/middleware&#34; ) func main() { r := chi.NewRouter() r.Use(middleware.Logger) r.Use(middleware.Recoverer) r.Use(middleware.CleanPath) r.Use(middleware.Heartbeat(&#34;/ping&#34;)) r.Get(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) { w.Write([]byte(&#34;Hello World!&#34;)) }) http.ListenAndServe(&#34;:3000&#34;, r) } Docs: Chi main page...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;77 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Golang Chi framewark starter" href="http://localhost:1313/blog/go-chi-starter/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Personal Awesome link list
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Admin stuff Git stuff
+self sign cert generation
+kubernetes tips &amp; tricks
+spinnaker CD
+awesome security github
+Mist CloudOps
+Docker Docker File
+Hadolint
+Container Training
+Architecture Microsoft Multitenent
+Higly Scalable Blog
+PM OpenProject
+Atlassian Agile
+DB Cockroach
+ClickHouse
+DuckDB Column version of Sqlite
+Golang Golang -&gt; Effective Go
+Go by Example
+Go Web by Example
+Go Script***
+Chi framework
+Fiber framework
+Gorm ORM
+Python TinyDB “JsonDB”
+Postgres Client
+FastAPI
+Typer...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;87 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Personal Awesome link list" href="http://localhost:1313/blog/personal-awsome-list/"></a>
+</article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+        <span>&copy; 2024 <a href="http://localhost:1313/">Hermanowicz.co</a></span> · 
 
     <span>
         Powered by

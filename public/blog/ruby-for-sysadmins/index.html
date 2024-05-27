@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Ruby basics | Hermanowicz.co</title>
+<meta name="keywords" content="snippet, ruby, SysAdmin, Note, 100daysWithHugo">
+<meta name="description" content="Basics of Ruby Language for system administrators, helping with journey into automation using Ruby.">
+<meta name="author" content="Herman">
+<link rel="canonical" href="http://localhost:1313/blog/ruby-for-sysadmins/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/ruby-for-sysadmins/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Hermanowicz.co (Alt + H)">Hermanowicz.co</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">Blogs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Ruby basics
+    </h1>
+    <div class="post-description">
+      Basics of Ruby Language for system administrators, helping with journey into automation using Ruby.
+    </div>
+    <div class="post-meta"><span title='2024-05-15 11:34:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;1566 words&nbsp;·&nbsp;Herman
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#basics-of-ruby">Basics of Ruby</a>
+      <ul>
+        <li><a href="#types">Types</a></li>
+        <li><a href="#logic">Logic</a></li>
+        <li><a href="#loops">Loops</a></li>
+        <li><a href="#file-operations">File Operations</a></li>
+        <li><a href="#modules-and-classes">Modules and Classes</a></li>
+      </ul>
+    </li>
+    <li><a href="#ruby-dir-class-a-guide-with-examples">Ruby Dir Class: A Guide with Examples</a></li>
+    <li><a href="#what-is-the-dir-class">What is the Dir Class?</a></li>
+    <li><a href="#basic-usage">Basic Usage</a>
+      <ul>
+        <li><a href="#listing-files-in-a-directory">Listing Files in a Directory</a></li>
+        <li><a href="#creating-a-new-directory">Creating a New Directory</a></li>
+        <li><a href="#deleting-a-directory">Deleting a Directory</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-usage">Advanced Usage</a>
+      <ul>
+        <li><a href="#recursively-listing-files-in-a-directory">Recursively Listing Files in a Directory</a></li>
+        <li><a href="#checking-if-a-directory-is-empty">Checking if a Directory is Empty</a></li>
+        <li><a href="#changing-the-current-working-directory">Changing the Current Working Directory</a></li>
+        <li><a href="#creating-a-temp-directory">Creating a Temp Directory</a></li>
+      </ul>
+    </li>
+    <li><a href="#ruby-for-server-automation">Ruby for Server Automation</a>
+      <ul>
+        <li><a href="#automating-server-configuration">Automating Server Configuration</a></li>
+        <li><a href="#automating-aws-management">Automating AWS Management</a></li>
+        <li><a href="#monitoring-and-logging">Monitoring and Logging</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>If you&rsquo;re a sysadmin looking to automate your server management tasks, Ruby might be the perfect language for you. With its simple syntax and powerful libraries, Ruby can help you write scripts and tools that make managing servers and AWS much easier.</p>
+<h2 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h2>
+<p>Ruby is an interpreted, high-level, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro &ldquo;Matz&rdquo; Matsumoto in Japan. Ruby is dynamically typed and uses garbage collection. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.</p>
+<p>The language is known for its simplicity and elegance, which makes it easy to learn and use. It&rsquo;s also highly extensible, with a vast library of third-party libraries and gems that can be easily integrated into your code.</p>
+<h2 id="basics-of-ruby">Basics of Ruby<a hidden class="anchor" aria-hidden="true" href="#basics-of-ruby">#</a></h2>
+<p>Ruby has a simple syntax that is easy to learn. Here are some of the basics:</p>
+<h3 id="types">Types<a hidden class="anchor" aria-hidden="true" href="#types">#</a></h3>
+<p>Ruby has a number of built-in types, including integers, floats, decimals, and big numbers. You can also create your own types using classes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Integers</span>
+</span></span><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Floats</span>
+</span></span><span style="display:flex;"><span>c, d <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Decimals those require pull of std-lib &#39;bigdecimal&#39;</span>
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#66d9ef">BigDecimal</span>(<span style="color:#e6db74">&#39;0.9&#39;</span>)
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> <span style="color:#66d9ef">BigDecimal</span>(<span style="color:#e6db74">&#39;0.1&#39;</span>)
+</span></span><span style="display:flex;"><span>sum <span style="color:#f92672">=</span> e <span style="color:#f92672">+</span> f <span style="color:#75715e"># = 1 ps. use method to_f to move from sientific notation</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Big numbers can use &#39;_&#39; to amke them more readible</span>
+</span></span><span style="display:flex;"><span>larg_num <span style="color:#f92672">=</span> <span style="color:#ae81ff">1_000_000_000_000</span>
+</span></span></code></pre></div><h3 id="logic">Logic<a hidden class="anchor" aria-hidden="true" href="#logic">#</a></h3>
+<p>Ruby has a number of logical operators, including <code>if</code>, <code>case</code>, <code>&amp;&amp;</code>, and <code>||</code>. These can be used to control the flow of your code and perform conditional operations.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> flag
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello, world&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> flag
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello when true&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello when false&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span>flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> is_correct_file?
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello when true&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elsif</span> is_folder?
+</span></span><span style="display:flex;"><span>	puts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello when false&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> x
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">when</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;one to five&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">when</span> <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;six&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">when</span> <span style="color:#e6db74">&#34;foo&#34;</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;prints foo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">when</span> String
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;input was string&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;I don&#39;t know&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> first_check? <span style="color:#f92672">&amp;&amp;</span> second_check?
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ..... AND</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;job done&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> first_check? <span style="color:#f92672">||</span> second_check?
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># ..... OR</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;job done&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="loops">Loops<a hidden class="anchor" aria-hidden="true" href="#loops">#</a></h3>
+<p>Ruby has a number of loop constructs, including <code>.times</code>, <code>.each</code>, <code>.upto</code>, and <code>for</code>. These can be used to perform repetitive tasks or iterate over collections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># -----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .times</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span><span style="color:#f92672">.</span>times <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .each</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">].</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	puts i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .upto</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#f92672">.</span>upto(<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>i<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	puts i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for i in []</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>	puts i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="file-operations">File Operations<a hidden class="anchor" aria-hidden="true" href="#file-operations">#</a></h3>
+<p>Ruby has built-in support for file and directory operations, including reading and writing files, creating directories, and listing directory contents.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Read a file</span>
+</span></span><span style="display:flex;"><span>file <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;example.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>)
+</span></span><span style="display:flex;"><span>puts file<span style="color:#f92672">.</span>read
+</span></span><span style="display:flex;"><span>file<span style="color:#f92672">.</span>close
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Write to a file</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;example.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	file<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;hello, world&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h3 id="modules-and-classes">Modules and Classes<a hidden class="anchor" aria-hidden="true" href="#modules-and-classes">#</a></h3>
+<p>Ruby has a powerful module and class system that makes it easy to organise your code and create reusable components.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Define a module</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">module</span> MyModule
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">say_hello</span>
+</span></span><span style="display:flex;"><span>		puts <span style="color:#e6db74">&#34;hello from MyModule&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Include a module in a class</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">include</span> <span style="color:#66d9ef">MyModule</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a new object of the class</span>
+</span></span><span style="display:flex;"><span>obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">MyClass</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Call a method from the module</span>
+</span></span><span style="display:flex;"><span>obj<span style="color:#f92672">.</span>say_hello
+</span></span></code></pre></div><h2 id="ruby-dir-class-a-guide-with-examples">Ruby Dir Class: A Guide with Examples<a hidden class="anchor" aria-hidden="true" href="#ruby-dir-class-a-guide-with-examples">#</a></h2>
+<p>Ruby&rsquo;s <code>Dir</code> class is a powerful tool for managing directories in your code. In this guide, we&rsquo;ll explore what the <code>Dir</code> class is, how to use it, and some examples of its functionality.</p>
+<h2 id="what-is-the-dir-class">What is the Dir Class?<a hidden class="anchor" aria-hidden="true" href="#what-is-the-dir-class">#</a></h2>
+<p>The <code>Dir</code> class is a built-in class in Ruby that provides a way to interact with directories in your file system. It allows you to perform various operations such as creating new directories, deleting directories, listing files in a directory, and more.</p>
+<h2 id="basic-usage">Basic Usage<a hidden class="anchor" aria-hidden="true" href="#basic-usage">#</a></h2>
+<p>Before we dive into some examples, let&rsquo;s start with some basic usage of the <code>Dir</code> class.</p>
+<h3 id="listing-files-in-a-directory">Listing Files in a Directory<a hidden class="anchor" aria-hidden="true" href="#listing-files-in-a-directory">#</a></h3>
+<p>To list all the files in a directory, you can use the <code>Dir.entries</code> method. This method returns an array of all the files and directories in the specified directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># List all files in the current directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>entries(<span style="color:#e6db74">&#34;.&#34;</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  puts file
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># .</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ..</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># file1.txt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># file2.rb</span>
+</span></span></code></pre></div><h3 id="creating-a-new-directory">Creating a New Directory<a hidden class="anchor" aria-hidden="true" href="#creating-a-new-directory">#</a></h3>
+<p>To create a new directory, you can use the <code>Dir.mkdir</code> method. This method takes a string argument that specifies the name of the directory you want to create.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Create a new directory called &#34;mydir&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>mkdir(<span style="color:#e6db74">&#34;mydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check that the directory was created</span>
+</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;mydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: true</span>
+</span></span></code></pre></div><h3 id="deleting-a-directory">Deleting a Directory<a hidden class="anchor" aria-hidden="true" href="#deleting-a-directory">#</a></h3>
+<p>To delete a directory, you can use the <code>Dir.delete</code> method. This method takes a string argument that specifies the name of the directory you want to delete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Delete the &#34;mydir&#34; directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>delete(<span style="color:#e6db74">&#34;mydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check that the directory was deleted</span>
+</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>exist?(<span style="color:#e6db74">&#34;mydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: false</span>
+</span></span></code></pre></div><h2 id="advanced-usage">Advanced Usage<a hidden class="anchor" aria-hidden="true" href="#advanced-usage">#</a></h2>
+<p>Now that we&rsquo;ve covered some basic usage of the <code>Dir</code> class, let&rsquo;s dive into some more advanced examples.</p>
+<h3 id="recursively-listing-files-in-a-directory">Recursively Listing Files in a Directory<a hidden class="anchor" aria-hidden="true" href="#recursively-listing-files-in-a-directory">#</a></h3>
+<p>To list all the files in a directory and its subdirectories, you can use the <code>Dir.glob</code> method. This method takes a string argument that specifies the path to the directory you want to list files in, plus a pattern that specifies the files you want to include.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># List all .txt files in the current directory and its subdirectories</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>glob(<span style="color:#e6db74">&#34;**/*.txt&#34;</span>)<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>  puts file
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># file1.txt</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># subdir/file3.txt</span>
+</span></span></code></pre></div><h3 id="checking-if-a-directory-is-empty">Checking if a Directory is Empty<a hidden class="anchor" aria-hidden="true" href="#checking-if-a-directory-is-empty">#</a></h3>
+<p>To check if a directory is empty, you can use the <code>Dir.empty?</code> method. This method takes a string argument that specifies the path to the directory you want to check.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Create an empty directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>mkdir(<span style="color:#e6db74">&#34;emptydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check if the directory is empty</span>
+</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>empty?(<span style="color:#e6db74">&#34;emptydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: true</span>
+</span></span></code></pre></div><h3 id="changing-the-current-working-directory">Changing the Current Working Directory<a hidden class="anchor" aria-hidden="true" href="#changing-the-current-working-directory">#</a></h3>
+<p>To change the current working directory, you can use the <code>Dir.chdir</code> method. This method takes a string argument that specifies the path to the directory you want to change to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Change the current working directory to &#34;mydir&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#34;mydir&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check that the current working directory was changed</span>
+</span></span><span style="display:flex;"><span>puts <span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>pwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: /path/to/mydir</span>
+</span></span></code></pre></div><h3 id="creating-a-temp-directory">Creating a Temp Directory<a hidden class="anchor" aria-hidden="true" href="#creating-a-temp-directory">#</a></h3>
+<p>To create a temporary directory, you can use the <code>Dir.mktmpdir</code> method. This method creates a new temporary directory with a unique name and returns the path to the directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;tmpdir&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a temporary directory</span>
+</span></span><span style="display:flex;"><span>tempdir <span style="color:#f92672">=</span> <span style="color:#66d9ef">Dir</span><span style="color:#f92672">.</span>mktmpdir
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output the path to the temporary directory</span>
+</span></span><span style="display:flex;"><span>puts tempdir
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output: /var/folders/9p/gxj7x00n4fz00000gn/T/d20190703-2188-1e0zqf2</span>
+</span></span></code></pre></div><h2 id="ruby-for-server-automation">Ruby for Server Automation<a hidden class="anchor" aria-hidden="true" href="#ruby-for-server-automation">#</a></h2>
+<p>Ruby&rsquo;s simplicity and flexibility make it a great choice for server automation tasks. Here are some examples of how you can use Ruby to automate your server management:</p>
+<h3 id="automating-server-configuration">Automating Server Configuration<a hidden class="anchor" aria-hidden="true" href="#automating-server-configuration">#</a></h3>
+<p>You can use Ruby to write scripts that automate server configuration tasks, such as installing software, configuring services, and setting up users and permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Install a package</span>
+</span></span><span style="display:flex;"><span>system(<span style="color:#e6db74">&#34;apt-get install vim&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR ----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`apt-get install vim`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure a service</span>
+</span></span><span style="display:flex;"><span>system(<span style="color:#e6db74">&#34;systemctl enable nginx&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR ----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`systemctl enable nginx`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a user</span>
+</span></span><span style="display:flex;"><span>system(<span style="color:#e6db74">&#34;useradd -m -s /bin/bash john&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR ----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`useradd -m -s /bin/bash john`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set permissions on a file</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>chmod(<span style="color:#ae81ff">0644</span>, <span style="color:#e6db74">&#34;example.txt&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR ----------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">`chmod 0644 example.txt`</span>
+</span></span></code></pre></div><h3 id="automating-aws-management">Automating AWS Management<a hidden class="anchor" aria-hidden="true" href="#automating-aws-management">#</a></h3>
+<p>Ruby has a number of libraries and tools that make it easy to automate AWS management tasks, such as creating EC2 instances, managing S3 buckets, and configuring load balancers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Create an EC2 instance</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;aws-sdk-ec2&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ec2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">Aws</span><span style="color:#f92672">::</span><span style="color:#66d9ef">EC2</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Resource</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">region</span>: <span style="color:#e6db74">&#39;us-east-1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>instance <span style="color:#f92672">=</span> ec2<span style="color:#f92672">.</span>create_instances({
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">image_id</span>: <span style="color:#e6db74">&#39;ami-0c55b159cbfafe1f0&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">min_count</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">max_count</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">instance_type</span>: <span style="color:#e6db74">&#39;t2.micro&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">key_name</span>: <span style="color:#e6db74">&#39;my-key-pair&#39;</span>
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create an S3 bucket</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;aws-sdk-s3&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">Aws</span><span style="color:#f92672">::</span><span style="color:#66d9ef">S3</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">region</span>: <span style="color:#e6db74">&#39;us-east-1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resp <span style="color:#f92672">=</span> s3<span style="color:#f92672">.</span>create_bucket({
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">acl</span>: <span style="color:#e6db74">&#34;public-read&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">bucket</span>: <span style="color:#e6db74">&#34;my-bucket&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">create_bucket_configuration</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">location_constraint</span>: <span style="color:#e6db74">&#34;us-east-1&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configure a load balancer</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;aws-sdk-elasticloadbalancing&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>elb <span style="color:#f92672">=</span> <span style="color:#66d9ef">Aws</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ElasticLoadBalancing</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">region</span>: <span style="color:#e6db74">&#39;us-east-1&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>resp <span style="color:#f92672">=</span> elb<span style="color:#f92672">.</span>create_load_balancer({
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">load_balancer_name</span>: <span style="color:#e6db74">&#39;my-load-balancer&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">listeners</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">protocol</span>: <span style="color:#e6db74">&#39;HTTP&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">load_balancer_port</span>: <span style="color:#ae81ff">80</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">instance_protocol</span>: <span style="color:#e6db74">&#39;HTTP&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">instance_port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">availability_zones</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;us-east-1a&#39;</span><span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">security_groups</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;my-security-group&#39;</span><span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">subnets</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;subnet-12345678&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h3 id="monitoring-and-logging">Monitoring and Logging<a hidden class="anchor" aria-hidden="true" href="#monitoring-and-logging">#</a></h3>
+<p>With Ruby, you can write scripts that monitor server performance, check log files for errors, and send alerts when issues are detected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Monitor server performance</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;sys/proctable&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>procs <span style="color:#f92672">=</span> <span style="color:#66d9ef">Sys</span><span style="color:#f92672">::</span><span style="color:#66d9ef">ProcTable</span><span style="color:#f92672">.</span>ps
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>procs<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>proc<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>proc<span style="color:#f92672">.</span>pid<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">#{</span>proc<span style="color:#f92672">.</span>comm<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Check log files for errors</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#34;example.log&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>file<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	file<span style="color:#f92672">.</span>each_line <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>line<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> line <span style="color:#f92672">=~</span> <span style="color:#e6db74">/error/</span>
+</span></span><span style="display:flex;"><span>			puts line
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send alerts when issues are detected</span>
+</span></span><span style="display:flex;"><span>require <span style="color:#e6db74">&#39;net/smtp&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;MESSAGE_END
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">From</span>: <span style="color:#66d9ef">Admin</span> <span style="color:#f92672">&lt;</span>admin@example<span style="color:#f92672">.</span>com<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">To</span>: <span style="color:#66d9ef">User</span> <span style="color:#f92672">&lt;</span>user@example<span style="color:#f92672">.</span>com<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">Subject</span>: <span style="color:#66d9ef">Server</span> <span style="color:#66d9ef">Error</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">There</span> was an error on the server<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">MESSAGE_END</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SMTP</span><span style="color:#f92672">.</span>start(<span style="color:#e6db74">&#39;smtp.example.com&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>smtp<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	smtp<span style="color:#f92672">.</span>send_message message, <span style="color:#e6db74">&#39;admin@example.com&#39;</span>, <span style="color:#e6db74">&#39;user@example.com&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Net</span><span style="color:#f92672">::</span><span style="color:#66d9ef">SMTP</span><span style="color:#f92672">.</span>start(<span style="color:#e6db74">&#39;smtp.example.com&#39;</span>, <span style="color:#ae81ff">587</span>, <span style="color:#e6db74">&#39;mydomain.com&#39;</span>, <span style="color:#e6db74">&#39;user_name&#39;</span>, <span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>smtp<span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span>	smtp<span style="color:#f92672">.</span>send_message message, <span style="color:#e6db74">&#39;admin@example.com&#39;</span>, <span style="color:#e6db74">&#39;user@example.com&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>If you&rsquo;re a sysadmin looking to automate your server management tasks, Ruby is definitely worth considering. With its simple syntax and powerful libraries, Ruby can help you write scripts and tools that make managing servers and AWS much easier.</p>
+<p>While this article provides a brief introduction to Ruby for server automation, there is much more to learn. The best way to get started is to experiment with the language and explore the vast library of third-party gems and tools available. With practice, you&rsquo;ll be able to write powerful scripts and tools that make your server management tasks a breeze.# Automating Servers and AWS with Ruby for Sysadmins</p>
+<p>If you&rsquo;re a sysadmin looking to automate your server management tasks, Ruby might be the perfect language for you. With its simple syntax and powerful libraries, Ruby can help you write scripts and tools that make managing servers and AWS much easier.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/snippet/">Snippet</a></li>
+      <li><a href="http://localhost:1313/tags/ruby/">Ruby</a></li>
+      <li><a href="http://localhost:1313/tags/sysadmin/">SysAdmin</a></li>
+      <li><a href="http://localhost:1313/tags/note/">Note</a></li>
+      <li><a href="http://localhost:1313/tags/100dayswithhugo/">100daysWithHugo</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/blog/architecture-adr/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>ADR - Note</span>
+  </a>
+  <a class="next" href="http://localhost:1313/blog/setting-up-vpc-using-cloudformation/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Setting up AWS VPC using Cloud Formation</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Hermanowicz.co</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

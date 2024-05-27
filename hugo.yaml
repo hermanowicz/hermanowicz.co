@@ -1,4 +1,9 @@
 theme: ["PaperMod"]
-baseURL: https://example.org/
+baseURL: https://hermanowicz.co/
 languageCode: en-us
-title: My New Hugo Site
+title: Hermanowicz.co
+socialIcons:
+  - name: "github"
+    url: "https://github.com/hermanowicz"
+  - name: "x"
+    url: "https://x.com/@hermanowicz_co"

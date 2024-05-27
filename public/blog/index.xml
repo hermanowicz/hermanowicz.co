@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blogs on Hermanowicz.co</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on Hermanowicz.co</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 May 2024 11:38:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple file server in golang</title>
+      <link>http://localhost:1313/blog/simple-golang-fileserver/</link>
+      <pubDate>Fri, 17 May 2024 11:38:05 +0000</pubDate>
+      <guid>http://localhost:1313/blog/simple-golang-fileserver/</guid>
+      <description>Snippet with explanation on how to use build and use file server write in golang using native go packages.</description>
+    </item>
+    <item>
+      <title>Terraform state in S3 &amp; DynamoDB</title>
+      <link>http://localhost:1313/blog/terraform-state/</link>
+      <pubDate>Fri, 17 May 2024 11:38:05 +0000</pubDate>
+      <guid>http://localhost:1313/blog/terraform-state/</guid>
+      <description>How to hold terraform state in AWS, soo other users in team can use it also. Example tested in production.</description>
+    </item>
+    <item>
+      <title>ADR - Note</title>
+      <link>http://localhost:1313/blog/architecture-adr/</link>
+      <pubDate>Wed, 15 May 2024 11:37:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/architecture-adr/</guid>
+      <description>Desc Text for Hello, World post.</description>
+    </item>
+    <item>
+      <title>Ruby basics</title>
+      <link>http://localhost:1313/blog/ruby-for-sysadmins/</link>
+      <pubDate>Wed, 15 May 2024 11:34:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ruby-for-sysadmins/</guid>
+      <description>Basics of Ruby Language for system administrators, helping with journey into automation using Ruby.</description>
+    </item>
+    <item>
+      <title>Setting up AWS VPC using Cloud Formation</title>
+      <link>http://localhost:1313/blog/setting-up-vpc-using-cloudformation/</link>
+      <pubDate>Wed, 15 May 2024 11:34:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/setting-up-vpc-using-cloudformation/</guid>
+      <description>How to set-up AWS VPC using cloud formation, AWS native IaC tool</description>
+    </item>
+    <item>
+      <title>Ansible notes</title>
+      <link>http://localhost:1313/blog/ansible-notes/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/ansible-notes/</guid>
+      <description>Desc Text for Hello, World post.</description>
+    </item>
+    <item>
+      <title>Deploy static-site tocdn using GitHub Action</title>
+      <link>http://localhost:1313/blog/deploy-website/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/deploy-website/</guid>
+      <description>Deploy static site to AWS cloudfront using GitHub Actions</description>
+    </item>
+    <item>
+      <title>Golang Chi framewark starter</title>
+      <link>http://localhost:1313/blog/go-chi-starter/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/go-chi-starter/</guid>
+      <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
+    </item>
+    <item>
+      <title>My 1st</title>
+      <link>http://localhost:1313/blog/hello/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/hello/</guid>
+      <description>Desc Text for Hello, World post.</description>
+    </item>
+    <item>
+      <title>Personal Awesome link list</title>
+      <link>http://localhost:1313/blog/personal-awsome-list/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/personal-awsome-list/</guid>
+      <description>Personal awesome list</description>
+    </item>
+  </channel>
+</rss>
