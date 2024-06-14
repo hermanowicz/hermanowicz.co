@@ -68,13 +68,7 @@
     <loc>http://localhost:1313/tags/chi/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/demo/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/deploy-website/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/first-post/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/github-actions/</loc>
@@ -84,9 +78,6 @@
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/go-chi-starter/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/hello/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/personal-awsome-list/</loc>

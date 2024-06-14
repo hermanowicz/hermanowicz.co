@@ -114,11 +114,6 @@
     <h2 class="entry-hint-parent">Simple file server in golang
     </h2>
   </header>
-  <div class="entry-content">
-    <p>Code: package main import ( &#34;embed&#34; &#34;fmt&#34; &#34;io/fs&#34; &#34;log&#34; &#34;net/http&#34; ) //go:embed site var f embed.FS func main() { fmt.Println(&#34;starting file server on port: 8090&#34;) rootF, err := fs.Sub(f, &#34;site&#34;) if err != nil { log.Fatalln(&#34;Cannot change root dir to site.&#34;, err.Error()) } handler := http.FileServer(http.FS(rootF)) http.Handle(&#34;/&#34;, handler) log.Fatal(http.ListenAndServe(&#34;0.0.0.0:8090&#34;, nil)) } Explanation “Site” is catalog with embedded static html site. which will be loaded in to binary.
-//go:embed.FS
-rootF is filesystem created at sub-branch (“site”) from embed....</p>
-  </div>
   <footer class="entry-footer"><span title='2024-05-17 11:38:05 +0000 +0000'>May 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;108 words&nbsp;·&nbsp;Herman</footer>
   <a class="entry-link" aria-label="post link to Simple file server in golang" href="http://localhost:1313/blog/simple-golang-fileserver/"></a>
 </article>

@@ -4,7 +4,7 @@
     <title>100daysWithHugo on Hermanowicz.co</title>
     <link>http://localhost:1313/tags/100dayswithhugo/</link>
     <description>Recent content in 100daysWithHugo on Hermanowicz.co</description>
-    <generator>Hugo -- 0.126.1</generator>
+    <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 May 2024 11:38:05 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/100dayswithhugo/index.xml" rel="self" type="application/rss+xml" />
@@ -63,13 +63,6 @@
       <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
       <guid>http://localhost:1313/blog/go-chi-starter/</guid>
       <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
-    </item>
-    <item>
-      <title>My 1st</title>
-      <link>http://localhost:1313/blog/hello/</link>
-      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
-      <guid>http://localhost:1313/blog/hello/</guid>
-      <description>Desc Text for Hello, World post.</description>
     </item>
     <item>
       <title>Personal Awesome link list</title>
