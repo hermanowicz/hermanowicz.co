@@ -1,0 +1,286 @@
+---
+title: "Wireguard instalation & configuration"
+date: 2024-05-15T11:30:03+00:00
+# weight: 1
+# aliases: ["/first"]
+tags: ["sql", "tutorial", "Note", "100daysWithHugo"]
+author: ["Herman",] # multiple authors
+showToc: flase
+TocOpen: false
+draft: false
+hidemeta: false
+comments: false
+description: "Wireguard instalation & configuration, with commands and examples"
+# canonicalURL: "https://canonical.url/to/page"
+disableHLJS: false # to disable highlightjs
+disableShare: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
+# cover:
+#     image: "<image path/url>" # image path/url
+#     alt: "<alt text>" # alt text
+#     caption: "<text>" # display caption under cover
+#     relative: false # when using page bundles set this to true
+#     hidden: true # only hide on current single page
+# editPost:
+#     URL: "https://github.com/<path_to_repo>/content"
+#     Text: "Suggest Changes" # edit text
+#     appendFilePath: true # to append file path to Edit link
+---
+
+Here's a step-by-step tutorial on setting up a Fireguard VPN server with a mesh network configuration.
+Fireguard is a term often used interchangeably with WireGuard, a modern, high-performance VPN protocol, so we'll use WireGuard for this tutorial.
+
+### **Fireguard (WireGuard) VPN Setup with Mesh Network Configuration**
+
+---
+
+### **Prerequisites:**
+
+1. **Servers or devices**: Multiple servers or devices with Linux installed (e.g., Ubuntu, Debian, CentOS).
+2. **Root or sudo access**: Administrative privileges on these devices.
+3. **Static IPs or domain names**: Static IP addresses or domain names for each device.
+4. **WireGuard installed**: Ensure WireGuard is installed on each device.
+
+---
+
+### **Step 1: Install WireGuard**
+
+#### On Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install wireguard
+```
+
+#### On CentOS:
+
+```bash
+sudo yum install epel-release
+sudo yum install wireguard-tools
+```
+
+### **Step 2: Generate Keys for Each Node**
+
+Generate a private and public key for each node in your mesh network.
+
+```bash
+umask 077
+wg genkey | tee privatekey | wg pubkey > publickey
+```
+
+### **Step 3: Configure WireGuard on Each Node**
+
+Create a configuration file for each node. Here's an example for `node1`:
+
+#### `/etc/wireguard/wg0.conf` for Node1:
+
+```bash
+[Interface]
+PrivateKey = <node1_private_key>
+Address = 10.0.0.1/24
+ListenPort = 51820
+
+[Peer]
+PublicKey = <node2_public_key>
+Endpoint = <node2_ip>:51820
+AllowedIPs = 10.0.0.2/32
+
+[Peer]
+PublicKey = <node3_public_key>
+Endpoint = <node3_ip>:51820
+AllowedIPs = 10.0.0.3/32
+```
+
+Repeat this for other nodes, changing the private key, address, and peer information accordingly.
+
+### **Step 4: Enable IP Forwarding**
+
+On each node, enable IP forwarding to allow traffic to pass through.
+
+#### Edit `/etc/sysctl.conf`:
+
+```bash
+net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+```
+
+#### Apply the changes:
+
+```bash
+sudo sysctl -p
+```
+
+### **Step 5: Start and Enable WireGuard**
+
+Start WireGuard on each node and enable it to start on boot.
+
+```bash
+sudo wg-quick up wg0
+sudo systemctl enable wg-quick@wg0
+```
+
+### **Step 6: Verify Configuration**
+
+Check the status of WireGuard to ensure it’s running correctly:
+
+```bash
+sudo wg show
+```
+
+### **Step 7: Test the Mesh Network**
+
+Ping each node to ensure connectivity:
+
+```bash
+ping 10.0.0.2 # Ping from node1 to node2
+ping 10.0.0.3 # Ping from node1 to node3
+```
+
+### **Advanced Configuration: Adding More Nodes**
+
+For a larger mesh network, add more peers to each node’s configuration:
+
+1. Generate keys for the new node.
+2. Update each existing node’s configuration to include the new node as a peer.
+3. Add the new node’s configuration to include all existing nodes as peers.
+
+### **Step 8: Securing and Maintaining the Network**
+
+- **Update Software Regularly**: Keep WireGuard and the system up-to-date.
+- **Monitor Network Traffic**: Use tools like `tcpdump` or `iftop` to monitor traffic for unusual activity.
+- **Backup Configurations**: Regularly backup your WireGuard configuration files.
+
+### **Optional: Use DNS with WireGuard**
+
+Configure a DNS server within the VPN to allow for easier internal communication.
+
+#### Add DNS to `/etc/wireguard/wg0.conf`:
+
+```bash
+[Interface]
+DNS = 10.0.0.1
+```
+
+---
+
+### **Conclusion**
+
+You've now set up a Fireguard (WireGuard) VPN with a mesh network configuration. This setup is scalable and can be adapted to various network topologies as your needs grow.
+
+For further customization or troubleshooting, refer to the [WireGuard documentation](https://www.wireguard.com/quickstart/).
+
+Feel free to reach out if you have any questions or need additional assistance!
+
+---
+
+
+The client configuration for connecting to a Fireguard (WireGuard) VPN typically involves setting up a `wg0.conf` file that includes the interface configuration, the server (peer) information, and some routing rules. Below is a step-by-step guide to creating a client configuration for connecting to the VPN.
+
+### **Client Configuration File for Fireguard (WireGuard)**
+
+---
+
+### **Step 1: Generate Keys on the Client**
+
+First, generate the private and public keys on the client machine.
+
+```bash
+umask 077
+wg genkey | tee client_privatekey | wg pubkey > client_publickey
+```
+
+### **Step 2: Create Client Configuration File**
+
+Create the `wg0.conf` file in the `/etc/wireguard/` directory (or a different directory if preferred).
+
+### **Example Client Configuration (`wg0.conf`)**
+
+```bash
+[Interface]
+# Client's private key
+PrivateKey = <client_private_key>
+# VPN IP address for the client (choose an unused IP in the VPN subnet)
+Address = 10.0.0.10/24
+# DNS server to use (optional, can be the server's internal IP or a public DNS)
+DNS = 10.0.0.1
+
+[Peer]
+# Server's public key
+PublicKey = <server_public_key>
+# Server's endpoint IP and port
+Endpoint = <server_ip>:51820
+# Define which traffic should be routed through the VPN
+AllowedIPs = 0.0.0.0/0, ::/0
+# Optional: PersistentKeepalive to keep the connection alive, useful for NAT traversal
+PersistentKeepalive = 25
+```
+
+### **Configuration Explained**
+
+- **[Interface]**: Defines the client-side configuration.
+- `PrivateKey`: The private key of the client, generated earlier.
+- `Address`: The IP address assigned to the client within the VPN. Ensure it is unique within the VPN subnet.
+- `DNS`: Specifies the DNS server the client should use. Can be set to the VPN server's internal IP or an external DNS like `8.8.8.8`.
+- **[Peer]**: Defines the server's information and connection rules.
+- `PublicKey`: The public key of the VPN server.
+- `Endpoint`: The server's IP address and port to connect to.
+- `AllowedIPs`: Specifies which IPs or subnets the VPN should route traffic for. `0.0.0.0/0, ::/0` routes all traffic through the VPN.
+- `PersistentKeepalive`: Sends a keepalive packet every specified seconds to maintain the connection (useful if behind a NAT).
+
+### **Step 3: Update the Server Configuration**
+
+Add the client's public key and IP to the server's configuration to allow the client to connect.
+
+#### Example Update to Server Configuration (`wg0.conf`):
+
+```bash
+[Peer]
+# Client's public key
+PublicKey = <client_public_key>
+# The IP address assigned to the client in the VPN
+AllowedIPs = 10.0.0.10/32
+```
+
+### **Step 4: Start and Enable WireGuard on the Client**
+
+Start the WireGuard interface on the client and enable it to start on boot.
+
+```bash
+sudo wg-quick up wg0
+sudo systemctl enable wg-quick@wg0
+```
+
+### **Step 5: Verify Connection**
+
+Check the connection status and confirm the client is connected to the VPN.
+
+```bash
+sudo wg show
+```
+
+### **Step 6: Test VPN Connectivity**
+
+Test the connection by pinging an internal address within the VPN or accessing a resource through the VPN to ensure the client is properly routed.
+
+```bash
+ping 10.0.0.1 # Ping the VPN server or another node
+```
+
+---
+
+### **Security Considerations**
+
+1. **Keep keys secure**: Ensure private keys are kept secure and not shared.
+2. **Limit access**: Use firewall rules to restrict access to the VPN server.
+3. **Regularly update**: Keep WireGuard and your system updated for security patches.
+
+---
+
+This configuration should enable your client to connect securely to a Fireguard (WireGuard) VPN server and participate in the mesh network if configured accordingly. If you have further questions or need additional details, feel free to ask!
