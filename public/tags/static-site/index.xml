@@ -9,11 +9,11 @@
     <lastBuildDate>Wed, 15 May 2024 11:30:03 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/static-site/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deploy static-site tocdn using GitHub Action</title>
+      <title>Deploy static-site to cdn using GitHub Action</title>
       <link>http://localhost:1313/blog/deploy-website/</link>
       <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
       <guid>http://localhost:1313/blog/deploy-website/</guid>
-      <description>Deploy static site to AWS cloudfront using GitHub Actions</description>
+      <description>Deploy static site to AWS s3 &amp;amp; cloudfront using GitHub Actions</description>
     </item>
   </channel>
 </rss>
