@@ -14,7 +14,6 @@ description: "Desc Text for Hello, World post."
 # canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: true
@@ -35,7 +34,7 @@ UseHugoToc: true
 #     appendFilePath: true # to append file path to Edit link
 ---
 
-## Links:
+## Links
 
 [ansible docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html)
 
@@ -45,8 +44,7 @@ UseHugoToc: true
 
 [ansibe cheat sheet](https://devhints.io/ansible)
 
-
-## Ansible playbook format:
+## Ansible playbook format
 
 ```yaml
 - hosts: all
@@ -61,7 +59,7 @@ UseHugoToc: true
     - ...
 ```
 
-### Adding user:
+### Adding user
 
 ```yaml
 - name: add user jeff
@@ -76,7 +74,7 @@ UseHugoToc: true
     password: temp_pass
 ```
 
-### Upgrading Ubuntu system using apt:
+### Upgrading Ubuntu system using apt
 
 ```yaml
 - name: upgrade system
@@ -84,7 +82,7 @@ UseHugoToc: true
     upgrade: yes
 ```
 
-### Installing packages using apt:
+### Installing packages using apt
 
 ```yaml
 - name: install required packages on new system
@@ -100,7 +98,7 @@ UseHugoToc: true
     install_recommends: yes
 ```
 
-### Cleanup Ubuntu using apt :
+### Cleanup Ubuntu using apt
 
 ```yaml
 - name: system cleanup
@@ -109,7 +107,7 @@ UseHugoToc: true
     purge: yes
 ```
 
-### Pulling git repo:
+### Pulling git repo
 
 ```yaml
 - name: pull git repo
@@ -120,7 +118,7 @@ UseHugoToc: true
     version: master
 ```
 
-### Starting fail2ban service:
+### Starting fail2ban service
 
 ```yaml
 - name: start fail2ban service:
@@ -130,7 +128,7 @@ UseHugoToc: true
     state: started
 ```
 
-### Running shell command:
+### Running shell command
 
 ```yaml
 - name: runn shell command
@@ -141,7 +139,7 @@ UseHugoToc: true
     chdir: ~
 ```
 
-### Exec script:
+### Exec script
 
 ```yaml
 - name: exec script.sh
@@ -152,7 +150,7 @@ UseHugoToc: true
     chdir: ~
 ```
 
-## Creating handle:
+## Creating handle
 
 ```yaml
 - name: start nginx

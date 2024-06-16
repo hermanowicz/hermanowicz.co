@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blog/simple-golang-fileserver/</link>
       <pubDate>Fri, 17 May 2024 11:38:05 +0000</pubDate>
       <guid>http://localhost:1313/blog/simple-golang-fileserver/</guid>
-      <description>Snippet with explanation on how to use build and use file server write in golang using native go packages.</description>
+      <description>Snippet with explanation on how to use build in file server in golang using native go package. Example shows how to host html page embeded in to binary, over kill but hey. TLS supporrt will be added.</description>
     </item>
     <item>
       <title>Personal Awesome link list</title>

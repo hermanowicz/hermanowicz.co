@@ -14,7 +14,6 @@ description: "Deploy static site to AWS cloudfront using GitHub Actions"
 # canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: true
@@ -71,10 +70,11 @@ jobs:
       - name: Deploy to S3
         run: aws s3 sync --delete ./dist/ s3://${{ secrets.BUCKET_ID }}
       - name: Create CloudFront invalidation
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
+        run: | aws cloudfront create-invalidation
+              --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 ```
 
-## Mermaid diagram:
+## Mermaid diagram
 
 ```mermaid
 flowchart TD
@@ -94,4 +94,3 @@ flowchart TD
 ## Links:
 
 [Astro Docs](https://docs.astro.build/en/guides/deploy/aws/)
-"deploy-website.md" [noeol] 79L, 2025B

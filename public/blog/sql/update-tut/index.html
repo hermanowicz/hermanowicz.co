@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>SQL Update tutorial | Hermanowicz.co</title>
+<meta name="keywords" content="sql, tutorial, Note, 100daysWithHugo">
+<meta name="description" content="SQL Update tutorial, with code examples.">
+<meta name="author" content="Herman">
+<link rel="canonical" href="http://localhost:1313/blog/sql/update-tut/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/sql/update-tut/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Hermanowicz.co (Alt + H)">Hermanowicz.co</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blog/">Blogs</a></div>
+    <h1 class="post-title entry-hint-parent">
+      SQL Update tutorial
+    </h1>
+    <div class="post-description">
+      SQL Update tutorial, with code examples.
+    </div>
+    <div class="post-meta"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;748 words&nbsp;·&nbsp;Herman
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mastering-sql-update-in-mysql-a-comprehensive-guide">Mastering SQL UPDATE in MySQL: A Comprehensive Guide</a>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#table-of-contents">Table of Contents</a></li>
+        <li><a href="#understanding-the-sql-update-statement">Understanding the SQL UPDATE Statement</a></li>
+        <li><a href="#basic-syntax-of-update">Basic Syntax of UPDATE</a></li>
+        <li><a href="#updating-single-and-multiple-columns">Updating Single and Multiple Columns</a></li>
+        <li><a href="#using-where-clause-for-conditional-updates">Using WHERE Clause for Conditional Updates</a></li>
+        <li><a href="#updating-multiple-rows">Updating Multiple Rows</a></li>
+        <li><a href="#joining-tables-for-updates">Joining Tables for Updates</a></li>
+        <li><a href="#best-practices-and-performance-tips">Best Practices and Performance Tips</a></li>
+        <li><a href="#common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="mastering-sql-update-in-mysql-a-comprehensive-guide">Mastering SQL UPDATE in MySQL: A Comprehensive Guide<a hidden class="anchor" aria-hidden="true" href="#mastering-sql-update-in-mysql-a-comprehensive-guide">#</a></h2>
+<h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
+<p>MySQL is one of the most popular relational database management systems used worldwide, renowned for its reliability, ease of use, and robust features. One of the essential operations in managing a MySQL database is the <code>UPDATE</code> statement, which allows you to modify existing data in a table. This tutorial will provide a thorough guide on how to use the <code>UPDATE</code> statement effectively, including syntax, examples, and best practices.</p>
+<hr>
+<h3 id="table-of-contents">Table of Contents<a hidden class="anchor" aria-hidden="true" href="#table-of-contents">#</a></h3>
+<ol>
+<li><a href="#understanding-the-sql-update-statement">Understanding the SQL UPDATE Statement</a></li>
+<li><a href="#basic-syntax-of-update">Basic Syntax of UPDATE</a></li>
+<li><a href="#updating-single-and-multiple-columns">Updating Single and Multiple Columns</a></li>
+<li><a href="#using-where-clause-for-conditional-updates">Using WHERE Clause for Conditional Updates</a></li>
+<li><a href="#updating-multiple-rows">Updating Multiple Rows</a></li>
+<li><a href="#joining-tables-for-updates">Joining Tables for Updates</a></li>
+<li><a href="#best-practices-and-performance-tips">Best Practices and Performance Tips</a></li>
+<li><a href="#common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<hr>
+<h3 id="understanding-the-sql-update-statement">Understanding the SQL UPDATE Statement<a hidden class="anchor" aria-hidden="true" href="#understanding-the-sql-update-statement">#</a></h3>
+<p>The <code>UPDATE</code> statement in SQL is used to modify existing records in a table. It allows you to change one or more column values for a set of rows. Unlike the <code>INSERT</code> statement, which adds new rows, <code>UPDATE</code> modifies the data in the existing rows of a table.</p>
+<h3 id="basic-syntax-of-update">Basic Syntax of UPDATE<a hidden class="anchor" aria-hidden="true" href="#basic-syntax-of-update">#</a></h3>
+<p>The basic syntax of the <code>UPDATE</code> statement in MySQL is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> column1 <span style="color:#f92672">=</span> value1, column2 <span style="color:#f92672">=</span> value2, ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> condition;
+</span></span></code></pre></div><ul>
+<li><code>table_name</code>: The name of the table you want to update.</li>
+<li><code>SET</code>: Specifies the columns to update and their new values.</li>
+<li><code>WHERE</code>: Filters the rows that need to be updated. If omitted, all rows will be updated.</li>
+</ul>
+<h3 id="updating-single-and-multiple-columns">Updating Single and Multiple Columns<a hidden class="anchor" aria-hidden="true" href="#updating-single-and-multiple-columns">#</a></h3>
+<h4 id="updating-a-single-column">Updating a Single Column<a hidden class="anchor" aria-hidden="true" href="#updating-a-single-column">#</a></h4>
+<p>To update a single column, specify the column name followed by the new value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">60000</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> employee_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span></code></pre></div><p>This query updates the <code>salary</code> column for the employee with an <code>employee_id</code> of 3.</p>
+<h4 id="updating-multiple-columns">Updating Multiple Columns<a hidden class="anchor" aria-hidden="true" href="#updating-multiple-columns">#</a></h4>
+<p>You can update multiple columns by separating them with commas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">65000</span>, department <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;HR&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> employee_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span></code></pre></div><p>This query updates both the <code>salary</code> and <code>department</code> columns for the employee with an <code>employee_id</code> of 3.</p>
+<h3 id="using-where-clause-for-conditional-updates">Using WHERE Clause for Conditional Updates<a hidden class="anchor" aria-hidden="true" href="#using-where-clause-for-conditional-updates">#</a></h3>
+<p>The <code>WHERE</code> clause is crucial for ensuring that only the intended rows are updated. Without it, all rows in the table would be updated.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> salary <span style="color:#f92672">=</span> <span style="color:#ae81ff">70000</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> department <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Sales&#39;</span>;
+</span></span></code></pre></div><p>This query updates the <code>salary</code> to 70000 for all employees in the <code>Sales</code> department.</p>
+<h3 id="updating-multiple-rows">Updating Multiple Rows<a hidden class="anchor" aria-hidden="true" href="#updating-multiple-rows">#</a></h3>
+<p>To update multiple rows, you can use conditions that match several records:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> salary <span style="color:#f92672">=</span> salary <span style="color:#f92672">*</span> <span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> department <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;IT&#39;</span>;
+</span></span></code></pre></div><p>This query gives a 10% raise to all employees in the <code>IT</code> department.</p>
+<h3 id="joining-tables-for-updates">Joining Tables for Updates<a hidden class="anchor" aria-hidden="true" href="#joining-tables-for-updates">#</a></h3>
+<p>Sometimes, you may need to update a table based on the data from another table. You can achieve this using a <code>JOIN</code> in the <code>UPDATE</code> statement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> employees e
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> departments d <span style="color:#66d9ef">ON</span> e.department_id <span style="color:#f92672">=</span> d.department_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> e.salary <span style="color:#f92672">=</span> e.salary <span style="color:#f92672">*</span> <span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> d.<span style="color:#66d9ef">location</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;New York&#39;</span>;
+</span></span></code></pre></div><p>This query increases the salary by 20% for employees working in the <code>New York</code> location.</p>
+<h3 id="best-practices-and-performance-tips">Best Practices and Performance Tips<a hidden class="anchor" aria-hidden="true" href="#best-practices-and-performance-tips">#</a></h3>
+<ol>
+<li><strong>Backup Data</strong>: Always backup your data before performing mass updates.</li>
+<li><strong>Test Queries</strong>: Test your <code>UPDATE</code> queries on a small dataset or use a <code>SELECT</code> statement to preview the changes.</li>
+<li><strong>Use Transactions</strong>: Use transactions to ensure data integrity, allowing you to roll back changes if necessary.</li>
+<li><strong>Indexing</strong>: Ensure the columns used in the <code>WHERE</code> clause are indexed to improve performance.</li>
+<li><strong>Limit Affected Rows</strong>: Be specific with the <code>WHERE</code> clause to limit the number of rows affected by the update.</li>
+</ol>
+<h3 id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them<a hidden class="anchor" aria-hidden="true" href="#common-pitfalls-and-how-to-avoid-them">#</a></h3>
+<ol>
+<li><strong>Forgetting WHERE Clause</strong>: Omitting the <code>WHERE</code> clause will update all rows. Always double-check your queries.</li>
+<li><strong>Ignoring Data Types</strong>: Ensure the values assigned to columns are compatible with the column data types.</li>
+<li><strong>Performance Issues</strong>: Large updates can be resource-intensive. Break down large updates into smaller batches when necessary.</li>
+<li><strong>Locking Issues</strong>: Be aware of potential locking issues, especially in high-concurrency environments. Use appropriate isolation levels.</li>
+</ol>
+<h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
+<p>The <code>UPDATE</code> statement is a powerful tool in SQL for modifying data in MySQL databases. By following the guidelines and best practices outlined in this tutorial, you can effectively and efficiently manage data updates in your tables. Always remember to back up your data, test your queries, and use the <code>WHERE</code> clause to avoid unintended changes.</p>
+<hr>
+<p>I hope this guide helps you master the <code>UPDATE</code> statement in MySQL. If you have any questions or need further assistance, feel free to leave a comment below!</p>
+<p>Happy coding!</p>
+<hr>
+<p>Feel free to tweak the content as per your requirements or reach out for more specific use cases or advanced topics.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/sql/">Sql</a></li>
+      <li><a href="http://localhost:1313/tags/tutorial/">Tutorial</a></li>
+      <li><a href="http://localhost:1313/tags/note/">Note</a></li>
+      <li><a href="http://localhost:1313/tags/100dayswithhugo/">100daysWithHugo</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/blog/sql/select-tut/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>SQL Select tutorial</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Hermanowicz.co</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

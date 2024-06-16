@@ -35,22 +35,22 @@ UseHugoToc: true
 #     appendFilePath: true # to append file path to Edit link
 ---
 
-## Origin:
+## Origin
 
 [pmerson/ADR-template](https://github.com/pmerson/ADR-template)
 
-## Usage guidelines:
+### Usage guidelines
 
- - Each ADR is a plain text, 1-2 page document
- - ADRs should be numbered
- - ADRs should be stored within each software project repo
- - Create a separate repo for crosscutting ADRs
- - Track ADRs in the backlog
- - Review ADRs
- - Create ADRs for *significant* design decisions
- - This template is a suggestion that you may want to adopt or adapt. In any case, establishing and sharing a template for ADRs in your team or organization is a good idea.
+- Each ADR is a plain text, 1-2 page document
+- ADRs should be numbered
+- ADRs should be stored within each software project repo
+- Create a separate repo for crosscutting ADRs
+- Track ADRs in the backlog
+- Review ADRs
+- Create ADRs for *significant* design decisions
+- This template is a suggestion that you may want to adopt or adapt. In any case, establishing and sharing a template for ADRs in your team or organization is a good idea.
 
-## ADR template:
+## ADR template
 
 ```md
 # ADR N: brief decision title

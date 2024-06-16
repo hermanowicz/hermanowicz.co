@@ -14,7 +14,6 @@ description: "Starter template for Chi freamwork in golang, with make file and a
 # canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false
-disableHLJS: false
 hideSummary: false
 searchHidden: true
 ShowReadingTime: true
@@ -58,7 +57,7 @@ clanup:
   rm dist/app
 ```
 
-## main.go:
+## main.go
 
 ```go
 package main
@@ -85,7 +84,7 @@ func main() {
 }
 ```
 
-## Docs:
+## Docs
 
 [Chi main page](https://go-chi.io/#/)
 

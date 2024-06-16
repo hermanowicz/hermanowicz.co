@@ -68,6 +68,9 @@
     <loc>http://localhost:1313/tags/chi/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/configuration/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/deploy-website/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
@@ -80,10 +83,46 @@
     <loc>http://localhost:1313/blog/go-chi-starter/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/golang/golang-tcp/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/golang/golang-tickers/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mysql/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/my.cnf/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/personal-awsome-list/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/alter-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/basics-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/indexes-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/insert-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/select-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/update-tut/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/static-site/</loc>
+    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tutorial/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

@@ -10,13 +10,13 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Snippet with explanation on how to use build and use file server write in golang using native go packages."
+description: "Snippet with explanation on how to use build in file server in golang using native go package.
+Example shows how to host html page embeded in to binary, over kill but hey. TLS supporrt will be added."
 # canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false
-disableHLJS: false
-hideSummary: true
-searchHidden: true
+hideSummary: false
+searchHidden: false
 ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
@@ -34,33 +34,43 @@ UseHugoToc: true
 #     Text: "Suggest Changes" # edit text
 #     appendFilePath: true # to append file path to Edit link
 ---
-## Code:
+
+Snippet with explanation on how to use build in file server in golang using native go package.
+Example shows how to host html page embeded in to binary, over kill but hey. TLS supporrt will be added.
+at later stage. Two options are at play Makecert and native go script to create dev certs.
+
+I very importent thing to note is that file server can be also used with native filesystem.
+Thanks to that we can host files like, css, js or even a downloads for clients and colegues.
+
+---
+
+## Code
 
 ```go
 package main
 
 import (
-	"embed"
-	"fmt"
-	"io/fs"
-	"log"
-	"net/http"
+ "embed"
+ "fmt"
+ "io/fs"
+ "log"
+ "net/http"
 )
 
 //go:embed site
 var f embed.FS
 
 func main() {
-	fmt.Println("starting file server on port: 8090")
-	rootF, err := fs.Sub(f, "site")
+ fmt.Println("starting file server on port: 8090")
+ rootF, err := fs.Sub(f, "site")
 
-	if err != nil {
-		log.Fatalln("Cannot change root dir to site.", err.Error())
-	}
+ if err != nil {
+  log.Fatalln("Cannot change root dir to site.", err.Error())
+ }
 
-	handler := http.FileServer(http.FS(rootF))
-	http.Handle("/", handler)
-	log.Fatal(http.ListenAndServe("0.0.0.0:8090", nil))
+ handler := http.FileServer(http.FS(rootF))
+ http.Handle("/", handler)
+ log.Fatal(http.ListenAndServe("0.0.0.0:8090", nil))
 }
 ```
 
@@ -72,12 +82,12 @@ func main() {
 
 rootF is filesystem created at sub-branch ("site") from embed.FS
 
-> 	rootF, err := fs.Sub(f, "site")
+> rootF, err := fs.Sub(f, "site")
 
 handler uses fs.FS via http.FS native go filesystem implementation to return http.Handler.
 
-> 	handler := http.FileServer(http.FS(rootF))
+> handler := http.FileServer(http.FS(rootF))
 
 Mounting site catalog at root path using default mux
 
-> 	http.Handle("/", handler)
+> http.Handle("/", handler)

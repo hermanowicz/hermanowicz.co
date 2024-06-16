@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tutorial on Hermanowicz.co</title>
+    <link>http://localhost:1313/tags/tutorial/</link>
+    <description>Recent content in Tutorial on Hermanowicz.co</description>
+    <generator>Hugo -- 0.127.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 May 2024 11:30:03 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang TCP tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tcp/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tcp/</guid>
+      <description>Golang TCP tutorial with client and server code examples.</description>
+    </item>
+    <item>
+      <title>Golang time/ticker tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tickers/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tickers/</guid>
+      <description>Golang time/ticker tutorial with code examples. (With signals)</description>
+    </item>
+    <item>
+      <title>SQL Alter tutorial</title>
+      <link>http://localhost:1313/blog/sql/alter-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/alter-tut/</guid>
+      <description>SQL Alter tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Basics tutorial</title>
+      <link>http://localhost:1313/blog/sql/basics-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/basics-tut/</guid>
+      <description>SQL Basics tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Index&#39;s tutorial</title>
+      <link>http://localhost:1313/blog/sql/indexes-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/indexes-tut/</guid>
+      <description>SQL Index&amp;#39;s tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Insert tutorial</title>
+      <link>http://localhost:1313/blog/sql/insert-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/insert-tut/</guid>
+      <description>SQL Insert tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Select tutorial</title>
+      <link>http://localhost:1313/blog/sql/select-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/select-tut/</guid>
+      <description>SQL Select tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Update tutorial</title>
+      <link>http://localhost:1313/blog/sql/update-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/update-tut/</guid>
+      <description>SQL Update tutorial, with code examples.</description>
+    </item>
+  </channel>
+</rss>

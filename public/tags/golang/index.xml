@@ -15,5 +15,19 @@
       <guid>http://localhost:1313/blog/go-chi-starter/</guid>
       <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
     </item>
+    <item>
+      <title>Golang TCP tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tcp/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tcp/</guid>
+      <description>Golang TCP tutorial with client and server code examples.</description>
+    </item>
+    <item>
+      <title>Golang time/ticker tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tickers/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tickers/</guid>
+      <description>Golang time/ticker tutorial with code examples. (With signals)</description>
+    </item>
   </channel>
 </rss>

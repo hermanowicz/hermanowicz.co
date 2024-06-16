@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blog/simple-golang-fileserver/</link>
       <pubDate>Fri, 17 May 2024 11:38:05 +0000</pubDate>
       <guid>http://localhost:1313/blog/simple-golang-fileserver/</guid>
-      <description>Snippet with explanation on how to use build and use file server write in golang using native go packages.</description>
+      <description>Snippet with explanation on how to use build in file server in golang using native go package. Example shows how to host html page embeded in to binary, over kill but hey. TLS supporrt will be added.</description>
     </item>
     <item>
       <title>Terraform state in S3 &amp; DynamoDB</title>
@@ -65,11 +65,74 @@
       <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
     </item>
     <item>
+      <title>Golang TCP tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tcp/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tcp/</guid>
+      <description>Golang TCP tutorial with client and server code examples.</description>
+    </item>
+    <item>
+      <title>Golang time/ticker tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tickers/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tickers/</guid>
+      <description>Golang time/ticker tutorial with code examples. (With signals)</description>
+    </item>
+    <item>
+      <title>MySql configuration file example</title>
+      <link>http://localhost:1313/blog/sql/my.cnf/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/my.cnf/</guid>
+      <description>SQL Alter tutorial code examples.</description>
+    </item>
+    <item>
       <title>Personal Awesome link list</title>
       <link>http://localhost:1313/blog/personal-awsome-list/</link>
       <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
       <guid>http://localhost:1313/blog/personal-awsome-list/</guid>
       <description>Personal awesome list</description>
+    </item>
+    <item>
+      <title>SQL Alter tutorial</title>
+      <link>http://localhost:1313/blog/sql/alter-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/alter-tut/</guid>
+      <description>SQL Alter tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Basics tutorial</title>
+      <link>http://localhost:1313/blog/sql/basics-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/basics-tut/</guid>
+      <description>SQL Basics tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Index&#39;s tutorial</title>
+      <link>http://localhost:1313/blog/sql/indexes-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/indexes-tut/</guid>
+      <description>SQL Index&amp;#39;s tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Insert tutorial</title>
+      <link>http://localhost:1313/blog/sql/insert-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/insert-tut/</guid>
+      <description>SQL Insert tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Select tutorial</title>
+      <link>http://localhost:1313/blog/sql/select-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/select-tut/</guid>
+      <description>SQL Select tutorial, with code examples.</description>
+    </item>
+    <item>
+      <title>SQL Update tutorial</title>
+      <link>http://localhost:1313/blog/sql/update-tut/</link>
+      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/sql/update-tut/</guid>
+      <description>SQL Update tutorial, with code examples.</description>
     </item>
   </channel>
 </rss>
