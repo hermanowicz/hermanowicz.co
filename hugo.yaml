@@ -1,7 +1,7 @@
 theme: ["PaperMod"]
 baseURL: https://hermanowicz.co/
 languageCode: en-us
-title: Hermanowicz.co
+title: hermanowicz.co
 socialIcons:
   - name: "github"
     url: "https://github.com/hermanowicz"

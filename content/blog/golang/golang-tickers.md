@@ -1,6 +1,6 @@
 ---
 title: "Golang time/ticker tutorial"
-date: 2024-05-15T11:30:03+00:00
+date: 2024-06-17T10:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["golang", "tutorial", "Note", "100daysWithHugo"]

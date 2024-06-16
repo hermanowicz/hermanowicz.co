@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Golang on Hermanowicz.co</title>
+    <title>Golang on hermanowicz.co</title>
     <link>http://localhost:1313/tags/golang/</link>
-    <description>Recent content in Golang on Hermanowicz.co</description>
+    <description>Recent content in Golang on hermanowicz.co</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 May 2024 11:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jun 2024 11:30:03 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang TCP tutorial</title>
+      <link>http://localhost:1313/blog/golang/golang-tcp/</link>
+      <pubDate>Sat, 15 Jun 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/golang-tcp/</guid>
+      <description>Golang TCP tutorial with client and server code examples.</description>
+    </item>
     <item>
       <title>Golang Chi framewark starter</title>
       <link>http://localhost:1313/blog/go-chi-starter/</link>
       <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
       <guid>http://localhost:1313/blog/go-chi-starter/</guid>
       <description>Starter template for Chi freamwork in golang, with make file and all nessacery commands to run new web development project.</description>
-    </item>
-    <item>
-      <title>Golang TCP tutorial</title>
-      <link>http://localhost:1313/blog/golang/golang-tcp/</link>
-      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
-      <guid>http://localhost:1313/blog/golang/golang-tcp/</guid>
-      <description>Golang TCP tutorial with client and server code examples.</description>
-    </item>
-    <item>
-      <title>Golang time/ticker tutorial</title>
-      <link>http://localhost:1313/blog/golang/golang-tickers/</link>
-      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
-      <guid>http://localhost:1313/blog/golang/golang-tickers/</guid>
-      <description>Golang time/ticker tutorial with code examples. (With signals)</description>
     </item>
   </channel>
 </rss>

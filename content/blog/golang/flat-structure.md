@@ -1,6 +1,6 @@
 ---
 title: "Flat file structure for Go (chi/mux) aplication"
-date: 2024-05-15T11:30:03+00:00
+date: 2024-06-15T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["sql", "tutorial", "Note", "100daysWithHugo"]
@@ -40,7 +40,7 @@ Effective way to structure a Go application using `net/http`, `gorilla/mux` (a p
 
 Here's a recommended flat structure:
 
-```
+```bash
 /myapp
     main.go
     handlers.go

@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Sql on Hermanowicz.co</title>
+    <title>Sql on hermanowicz.co</title>
     <link>http://localhost:1313/tags/sql/</link>
-    <description>Recent content in Sql on Hermanowicz.co</description>
+    <description>Recent content in Sql on hermanowicz.co</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 May 2024 11:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jun 2024 11:30:03 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flat file structure for Go (chi/mux) aplication</title>
+      <link>http://localhost:1313/blog/golang/flat-structure/</link>
+      <pubDate>Sat, 15 Jun 2024 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/blog/golang/flat-structure/</guid>
+      <description>Flat file structure for Go (chi/mux) aplication, with code examples</description>
+    </item>
     <item>
       <title>SQL Alter tutorial</title>
       <link>http://localhost:1313/blog/sql/alter-tut/</link>
-      <pubDate>Wed, 15 May 2024 11:30:03 +0000</pubDate>
+      <pubDate>Sat, 15 Jun 2024 11:30:03 +0000</pubDate>
       <guid>http://localhost:1313/blog/sql/alter-tut/</guid>
       <description>SQL Alter tutorial, with code examples.</description>
     </item>

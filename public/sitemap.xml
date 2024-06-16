@@ -2,31 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2024-06-17T10:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-06-17T10:30:03+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/100dayswithhugo/</loc>
-    <lastmod>2024-05-17T11:38:05+00:00</lastmod>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/golang/flat-structure/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/golang/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/golang/golang-tcp/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/note/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sql/alter-tut/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tutorial/</loc>
+    <lastmod>2024-06-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
     <lastmod>2024-05-17T11:38:05+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-05-17T11:38:05+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-05-17T11:38:05+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/links/</loc>
-    <lastmod>2024-05-17T11:38:05+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/note/</loc>
     <lastmod>2024-05-17T11:38:05+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/simple-golang-fileserver/</loc>
     <lastmod>2024-05-17T11:38:05+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/snippet/</loc>
-    <lastmod>2024-05-17T11:38:05+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-05-17T11:38:05+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/terraform/</loc>
@@ -77,16 +95,7 @@
     <loc>http://localhost:1313/tags/github-actions/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/go-chi-starter/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/golang/golang-tcp/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/golang/golang-tickers/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/mysql/</loc>
@@ -96,12 +105,6 @@
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/personal-awsome-list/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/sql/alter-tut/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/sql/basics-tut/</loc>
@@ -120,9 +123,6 @@
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/static-site/</loc>
-    <lastmod>2024-05-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tutorial/</loc>
     <lastmod>2024-05-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>

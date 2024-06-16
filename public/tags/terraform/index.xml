@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Terraform on Hermanowicz.co</title>
+    <title>Terraform on hermanowicz.co</title>
     <link>http://localhost:1313/tags/terraform/</link>
-    <description>Recent content in Terraform on Hermanowicz.co</description>
+    <description>Recent content in Terraform on hermanowicz.co</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 May 2024 11:38:05 +0000</lastBuildDate>

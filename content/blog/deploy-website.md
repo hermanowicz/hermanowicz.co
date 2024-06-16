@@ -1,5 +1,5 @@
 ---
-title: "Deploy static-site tocdn using GitHub Action"
+title: "Deploy static-site to cdn using GitHub Action"
 date: 2024-05-15T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -10,7 +10,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Deploy static site to AWS cloudfront using GitHub Actions"
+description: "Deploy static site to AWS s3 & cloudfront using GitHub Actions"
 # canonicalURL: "https://canonical.url/to/page"
 disableHLJS: false # to disable highlightjs
 disableShare: false

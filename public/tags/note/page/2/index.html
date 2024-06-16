@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Note | Hermanowicz.co</title>
+<title>Note | hermanowicz.co</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -74,7 +74,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Hermanowicz.co (Alt + H)">Hermanowicz.co</a>
+            <a href="http://localhost:1313/" accesskey="h" title="hermanowicz.co (Alt + H)">hermanowicz.co</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -108,6 +108,18 @@
     Note
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Golang Chi framewark starter
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Commands: # init go module in current dir go mod init github.com/Hermanowicz/new-app # install chi freamowk go get -u github.com/go-chi/chi/v5 # run tidy go mod tidy Makefile: build: go build -o app dist/main.go clanup: rm dist/app main.go package main import ( &#34;net/http&#34; &#34;github.com/go-chi/chi/v5&#34; &#34;github.com/go-chi/chi/v5/middleware&#34; ) func main() { r := chi.NewRouter() r.Use(middleware.Logger) r.Use(middleware.Recoverer) r.Use(middleware.CleanPath) r.Use(middleware.Heartbeat(&#34;/ping&#34;)) r.Get(&#34;/&#34;, func(w http.ResponseWriter, r *http.Request) { w.Write([]byte(&#34;Hello World!&#34;)) }) http.ListenAndServe(&#34;:3000&#34;, r) } Docs Chi main page...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;77 words&nbsp;·&nbsp;Herman</footer>
+  <a class="entry-link" aria-label="post link to Golang Chi framewark starter" href="http://localhost:1313/blog/go-chi-starter/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -157,22 +169,6 @@ Typer...</p>
   </div>
   <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;87 words&nbsp;·&nbsp;Herman</footer>
   <a class="entry-link" aria-label="post link to Personal Awesome link list" href="http://localhost:1313/blog/personal-awsome-list/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL Alter tutorial
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>MySQL ALTER TABLE Tutorial The ALTER TABLE statement in MySQL is used to add, modify, or delete columns in an existing table. It can also be used to change table structure and constraints. This tutorial will cover various aspects of using ALTER TABLE with examples.
-1. Adding a Column To add a column to an existing table, use the ADD clause.
-Syntax:
-ALTER TABLE table_name ADD column_name column_definition; Example:
-Let’s say we have a table employees and we want to add a new column age....</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-05-15 11:30:03 +0000 +0000'>May 15, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;555 words&nbsp;·&nbsp;Herman</footer>
-  <a class="entry-link" aria-label="post link to SQL Alter tutorial" href="http://localhost:1313/blog/sql/alter-tut/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -249,7 +245,7 @@ To retrieve data from one or more columns in a table, you use the SELECT stateme
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Hermanowicz.co</a></span> · 
+        <span>&copy; 2024 <a href="http://localhost:1313/">hermanowicz.co</a></span> · 
 
     <span>
         Powered by

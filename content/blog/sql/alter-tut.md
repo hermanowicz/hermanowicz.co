@@ -1,6 +1,6 @@
 ---
 title: "SQL Alter tutorial"
-date: 2024-05-15T11:30:03+00:00
+date: 2024-06-15T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
 tags: ["sql", "tutorial", "Note", "100daysWithHugo"]
